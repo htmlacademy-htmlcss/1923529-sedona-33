@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Павел Серегин](https://up.htmlacademy.ru/htmlcss/33/user/1923529).
-* Наставник: `Владислав Ермолаев (https://htmlacademy.ru/profile/id128353)`.
+* Наставник: [Владислав Ермолаев](https://htmlacademy.ru/profile/id128353).
 
 ---
 
