@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/1923529-sedona-33/styles/styles.css" />
     <title>HTML Academy: Седона-Каталог</title>
   </head>
   <body>
     <h1 class="visually-hidden">Каталог гостиниц</h1>
-    <!--Header START-->
+    <!--Header-->
 
     <header class="page-header">
       <div class="container">
@@ -42,19 +43,19 @@
               <a href="#"><span class="visually-hidden">Лайк</span></a>
             </li>
             <li class="navigation-item">
-              <a href="#">Хочу сюда!</a>
+              <a class="navigation-bottom" href="#">Хочу сюда!</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!--Header END-->
+    <!--Header-->
 
-    <!--Main START-->
+    <!--Main-->
 
     <main class="inner">
-      <!--Фильтры начало-->
+      <!--Секция фильтры-->
       <section class="filters">
         <div class="container">
           <h2>Гостиницы Седоны</h2>
@@ -68,8 +69,12 @@
               <a>Гостиницы</a>
             </li>
           </ul>
-          <form action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset>
+          <form
+            action="https://echo.htmlacademy.ru/"
+            class="catalog-filters"
+            method="get"
+          >
+            <fieldset class="filters-group">
               <legend>Инфраструктура:</legend>
               <ul class="filters-list">
                 <li class="filters-item">
@@ -106,7 +111,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="filters-group">
               <legend>Тип жилья:</legend>
               <ul class="filters-list">
                 <li class="filters-item">
@@ -145,7 +150,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="filters-group">
               <legend>Стоимость, ₽:</legend>
               <label class="filters-label">
                 от
@@ -178,14 +183,14 @@
                 <label class="visually-hidden" for="maximum">Max</label>
               </div>
             </fieldset>
-            <button class="button" type="submit">Применить</button>
-            <button class="button" type="submit">Сбросить</button>
+            <button class="button-filters" type="submit">Применить</button>
+            <button class="button-filters" type="submit">Сбросить</button>
           </form>
         </div>
       </section>
-      <!--Фильтры конец-->
+      <!--Секция фильтры-->
 
-      <!--Каталог начало-->
+      <!--Список отелей-->
       <section class="hotels">
         <div class="container">
           <h2 class="visually-hidden">Каталог</h2>
@@ -318,12 +323,10 @@
               <b>Рейтинг: 9,2</b>
             </li>
           </ul>
-          <a class="button" href="#">
-            <span class="visually-hidden">Загрузить ещё</span>
-          </a>
+          <a class="button download-button" href="#"> Загрузить ещё </a>
           <ul class="pagination">
             <li class="pagination-item">
-              <a>1</a>
+              <a class="pagination-current">1</a>
             </li>
             <li class="pagination-item">
               <a href="#">2</a>
@@ -341,7 +344,7 @@
               <a href="#">10</a>
             </li>
           </ul>
-          <form>
+          <form class="sorting-type">
             <label for="sorting-number">Гостиниц на странице:</label>
             <select
               class="select-control"
@@ -357,10 +360,10 @@
           </form>
         </div>
       </section>
-      <!--Каталог конец-->
+      <!--Список отелей-->
 
-      <!--Рассылка начало-->
-      <section class="subscription">
+      <!--Секция рассылка-->
+      <section class="subscription-catalog">
         <h2>Подпишитесь на рассылку</h2>
         <p>
           Только полезная информация и никакого спама, честное бойскаутское!
@@ -381,12 +384,12 @@
           </div>
         </form>
       </section>
-      <!--Рассылка конец-->
+      <!--Секция рассылка-->
     </main>
 
-    <!--Main END-->
+    <!--Main-->
 
-    <!-- FOOTER START-->
+    <!--Footer-->
 
     <footer class="page-footer">
       <div class="container">
@@ -409,11 +412,15 @@
         </ul>
         <a class="phone" href="tel:+78128121212">+7 812 812-12-12</a>
         <a class="academy" href="https://htmlacademy.ru/"
-          ><img src="#" alt="Перейти на главную страницу html academy"
+          ><img
+            src="/1923529-sedona-33/images/logo_htmlacademy.svg"
+            width="115"
+            height="33"
+            alt="Перейти на главную страницу html academy"
         /></a>
       </div>
     </footer>
 
-    <!-- FOOTER END-->
+    <!--Footer-->
   </body>
 </html>
