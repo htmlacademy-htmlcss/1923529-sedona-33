@@ -12,7 +12,14 @@
   src: url(/1923529-sedona-33/fonts/ptsans-700.woff2) format(woff2);
   font-display: swap;
 }
+html {
+  height: 100%;
+}
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-size: 18px;
@@ -27,23 +34,57 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
+.header-logo {
+  display: block;
+  margin-right: 30px;
+}
+.navigation {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 400px;
+}
+.navigation-user {
+  width: 300px;
+  margin-left: auto;
+}
 .navigation-item a {
-  color: inherit;
+  color: #000000;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
   text-decoration: none;
   text-align: center;
 }
-.navigation-bottom {
+.navigation-item .navigation-bottom {
   text-transform: uppercase;
   background-color: #756257;
-  color: #FFFFFF;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* Header */
 
-/* Секция Welcome */
+/* Main */
+
+.main-index {
+  flex-grow: 1;
+}
+
+/* Main */
+
+/* Welcome */
+
+.welcome img {
+  display: block;
+  margin: 0 auto;
+}
 
 .welcome {
   background-color: white;
@@ -59,9 +100,9 @@ body {
   height: 57px;
 }
 
-/* Секция Welcome */
+/* Welcome */
 
-/* Секция описание */
+/* Description */
 
 .description {
   color: #000000;
@@ -83,13 +124,21 @@ body {
   text-align: center;
 }
 
-/* Секция описание */
+/* Description */
 
-/* Список преимущуств */
+/* Advantages */
 
 .advantages {
   background-color: white;
   color: black;
+}
+.advantages-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .advantages-item h3 {
   font-weight: bold;
@@ -106,10 +155,12 @@ body {
   line-height: 21px;
   text-align: center;
   color: #333333;
+  display: block;
 }
 .advantages-list li:nth-child(1),
 .advantages-list li:nth-child(7) {
   background: #83b3d3;
+  width: 400px;
 }
 .advantages-desc h3,
 .advantages-desc span,
@@ -121,17 +172,20 @@ body {
 .advantages-list li:nth-child(8),
 .advantages-list li:nth-child(10) {
   background: rgba(131, 179, 211, 0.12);
+  width: 400px;
 }
 .advantages-list li:nth-child(4) {
   background: #ffffff;
+  width: 400px;
 }
 .advantages-list li:nth-child(9) {
   background: rgba(131, 179, 211, 0.2);
+  width: 400px;
 }
 
-/* Список преимущуств */
+/* Advantages */
 
-/* Секция поиск  */
+/* Search  */
 
 .search {
   background-color: #ffffff;
@@ -162,10 +216,13 @@ body {
   text-decoration: none;
   background: #756257;
 }
+.search div {
+  text-align: center;
+}
 
-/* Секция поиск  */
+/* Search  */
 
-/* Секция рассылка */
+/* Subscription */
 
 .subscription {
   background-color: black;
@@ -205,7 +262,10 @@ body {
   color: #ffffff;
   background: #83b3d3;
 }
-/* Секция рассылка */
+.subscription form {
+  text-align: center;
+}
+/* Subscription */
 
 /* Footer */
 
@@ -213,7 +273,18 @@ body {
   background-color: #ffffff;
   color: black;
 }
-
+.footer-container {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 150px;
+}
 .social-item a {
   text-decoration: none;
   text-align: center;
@@ -232,8 +303,15 @@ body {
 
 /* Стили каталога */
 
-/* Секция фильтры */
+/* Filters */
 
+.filters-container {
+  width: 1060px;
+  margin: 0 auto;
+}
+.catalog-filters {
+  display: flex;
+}
 .filters {
   background-color: black;
   color: white;
@@ -286,13 +364,33 @@ body {
   color: #ffffff;
 }
 
-/* Секция фильтры */
+/* Filters */
 
-/* Список отелей */
+/* Hotels */
 
 .hotels {
   background-color: #ffffff;
   color: black;
+}
+.hotels-container {
+  width: 1060px;
+  margin: 0 auto;
+}
+.hotels-container fieldset {
+  display: flex;
+}
+.sorting-list {
+  margin-left: auto;
+}
+.hotels-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotels-item {
+  width: 340px;
 }
 .hotels p:only-of-type {
   font-weight: bold;
@@ -348,6 +446,9 @@ body {
   color: #ffffff;
   background: #83b3d3;
 }
+.hotels-container .more {
+  text-align: center;
+}
 .download-button {
   font-weight: bold;
   font-size: 20px;
@@ -358,6 +459,10 @@ body {
   text-decoration: none;
   background: #83b3d3;
 }
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
 .pagination-item a {
   text-decoration: none;
   font-weight: bold;
@@ -367,7 +472,7 @@ body {
   color: #ffffff;
   background: #83b3d3;
 }
-.pagination-current {
+.pagination-item .pagination-current {
   color: #000000;
   background: #f2f2f2;
 }
@@ -378,9 +483,9 @@ body {
   line-height: 23px;
   color: #333333;
 }
-/* Список отелей */
+/* Hotels */
 
-/* Секция рассылка */
+/* Subscription-catalog */
 
 .subscription-catalog {
   background-color: #ffffff;
@@ -401,5 +506,7 @@ body {
   text-align: center;
   color: #333333;
 }
-
-/* Секция рассылка */
+.subscription-catalog form {
+  text-align: center;
+}
+/* Subscription-catalog */
