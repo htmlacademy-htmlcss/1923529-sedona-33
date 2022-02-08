@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <title>HTML Academy: Седона-Каталог</title>
   </head>
   <body>
@@ -11,17 +12,17 @@
     <!--Header-->
 
     <header class="page-header">
-      <div class="container">
-        <a href="index.html">
-          <img
-            class="page-header-logo"
-            src="/1923529-sedona-33/images/city-of-sedona.png"
-            width="139"
-            height="70"
-            alt="Логотип сайта городка Седона"
-          />
-        </a>
+      <div class="header-container">
         <nav class="navigation">
+          <a href="index.html">
+            <img
+              class="page-header-logo"
+              src="/1923529-sedona-33/images/city-of-sedona.png"
+              width="139"
+              height="70"
+              alt="Логотип сайта городка Седона"
+            />
+          </a>
           <h2 class="visually-hidden">Меню</h2>
           <ul class="navigation-list">
             <li class="navigation-item">
@@ -54,9 +55,9 @@
     <!--Main-->
 
     <main class="inner">
-      <!--Секция фильтры-->
+      <!--Filters-->
       <section class="filters">
-        <div class="container">
+        <div class="filters-container">
           <h2>Гостиницы Седоны</h2>
           <ul class="breadcrumbs">
             <li class="breadcrumbs-item">
@@ -182,19 +183,21 @@
                 <label class="visually-hidden" for="maximum">Max</label>
               </div>
             </fieldset>
-            <button class="button-filters" type="submit">Применить</button>
-            <button class="button-filters" type="submit">Сбросить</button>
+            <div class="btn">
+              <button class="button-filters" type="submit">Применить</button>
+              <button class="button-filters" type="submit">Сбросить</button>
+            </div>
           </form>
         </div>
       </section>
-      <!--Секция фильтры-->
+      <!-- Filters -->
 
-      <!--Список отелей-->
+      <!--Hotels-->
       <section class="hotels">
-        <div class="container">
+        <div class="hotels-container">
           <h2 class="visually-hidden">Каталог</h2>
-          <p>Найдено гостиниц: 38</p>
           <fieldset>
+            <p>Найдено гостиниц: 38</p>
             <legend class="visually-hidden" for="sorting">Сортировка</legend>
             <select
               class="select-control"
@@ -322,68 +325,70 @@
               <b>Рейтинг: 9,2</b>
             </li>
           </ul>
-          <a class="button download-button" href="#"> Загрузить ещё </a>
-          <ul class="pagination">
-            <li class="pagination-item">
-              <a class="pagination-current">1</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">2</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">3</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">4</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">...</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">10</a>
-            </li>
-          </ul>
-          <form class="sorting-type">
-            <label for="sorting-number">Гостиниц на странице:</label>
-            <select
-              class="select-control"
-              id="sorting-number"
-              name="sorting"
-              onChange=""
-            >
-              <option title="Переход к 4 отелям" value="#">4</option>
-              <option title="Переход к 6 отелям" value="#">6</option>
-              <option title="Переход к 8 отелям" value="#">8</option>
-              <option title="Переход к 10 отелям" value="#">10</option>
-            </select>
-          </form>
+          <div class="more">
+            <a class="button download-button" href="#"> Загрузить ещё </a>
+          </div>
+          <div class="pagination">
+            <ul class="pagination-list">
+              <li class="pagination-item">
+                <a class="pagination-current">1</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">2</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">3</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">4</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">...</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">10</a>
+              </li>
+            </ul>
+            <form class="sorting-type">
+              <label for="sorting-number">Гостиниц на странице:</label>
+              <select
+                class="select-control"
+                id="sorting-number"
+                name="sorting"
+                onChange=""
+              >
+                <option title="Переход к 4 отелям" value="#">4</option>
+                <option title="Переход к 6 отелям" value="#">6</option>
+                <option title="Переход к 8 отелям" value="#">8</option>
+                <option title="Переход к 10 отелям" value="#">10</option>
+              </select>
+            </form>
+          </div>
         </div>
       </section>
-      <!--Список отелей-->
+      <!--Hotels-->
 
-      <!--Секция рассылка-->
+      <!--Subscription-catalog-->
       <section class="subscription-catalog">
         <h2>Подпишитесь на рассылку</h2>
         <p>
           Только полезная информация и никакого спама, честное бойскаутское!
         </p>
         <form action="https://echo.htmlacademy.ru/" method="post">
-          <div class="subscription-email">
-            <input
-              class="subscription-field"
-              placeholder="Ваш e-mail"
-              type="email"
-              name="subscription-email"
-              id="subscription-email"
-              required
-            />
-            <button class="button subscription-button" type="submit">
-              Подписаться
-            </button>
-          </div>
+          <input
+            class="subscription-field"
+            placeholder="Ваш e-mail"
+            type="email"
+            name="subscription-email"
+            id="subscription-email"
+            required
+          />
+          <button class="button subscription-button" type="submit">
+            Подписаться
+          </button>
         </form>
       </section>
-      <!--Секция рассылка-->
+      <!--Subscription-catalog-->
     </main>
 
     <!--Main-->
@@ -391,7 +396,7 @@
     <!--Footer-->
 
     <footer class="page-footer">
-      <div class="container">
+      <div class="footer-container">
         <ul class="social-list">
           <li class="social-item">
             <a class="button" href="#">
