@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/1923529-sedona-33/styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <title>HTML Academy: Седона-Каталог</title>
   </head>
   <body>
@@ -12,40 +12,42 @@
     <!--Header-->
 
     <header class="page-header">
-      <nav class="navigation">
-        <a href="index.html">
-          <img
-            class="page-header-logo"
-            src="/1923529-sedona-33/images/city-of-sedona.png"
-            width="139"
-            height="70"
-            alt="Логотип сайта городка Седона"
-          />
-        </a>
-        <h2 class="visually-hidden">Меню</h2>
-        <ul class="navigation-list">
-          <li class="navigation-item">
-            <a href="index.html">Главная</a>
-          </li>
-          <li class="navigation-item">
-            <a href="about.html">О Седоне</a>
-          </li>
-          <li class="navigation-item">
-            <a href="catalog.html">Гостиницы</a>
-          </li>
-        </ul>
-        <ul class="navigation-list navigation-user">
-          <li class="navigation-item">
-            <a href="#"><span class="visually-hidden">Поиск</span></a>
-          </li>
-          <li class="navigation-item">
-            <a href="#"><span class="visually-hidden">Лайк</span></a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-bottom" href="#">Хочу сюда!</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="header-container">
+        <nav class="navigation">
+          <a href="index.html">
+            <img
+              class="page-header-logo"
+              src="/1923529-sedona-33/images/city-of-sedona.png"
+              width="139"
+              height="70"
+              alt="Логотип сайта городка Седона"
+            />
+          </a>
+          <h2 class="visually-hidden">Меню</h2>
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a href="index.html">Главная</a>
+            </li>
+            <li class="navigation-item">
+              <a href="about.html">О Седоне</a>
+            </li>
+            <li class="navigation-item">
+              <a href="catalog.html">Гостиницы</a>
+            </li>
+          </ul>
+          <ul class="navigation-list navigation-user">
+            <li class="navigation-item">
+              <a href="#"><span class="visually-hidden">Поиск</span></a>
+            </li>
+            <li class="navigation-item">
+              <a href="#"><span class="visually-hidden">Лайк</span></a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-bottom" href="#">Хочу сюда!</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!--Header-->
@@ -53,7 +55,6 @@
     <!--Main-->
 
     <main class="inner">
-
       <!--Filters-->
       <section class="filters">
         <div class="filters-container">
@@ -324,7 +325,9 @@
               <b>Рейтинг: 9,2</b>
             </li>
           </ul>
-          <div class="more"><a class="button download-button" href="#"> Загрузить ещё </a></div>
+          <div class="more">
+            <a class="button download-button" href="#"> Загрузить ещё </a>
+          </div>
           <div class="pagination">
             <ul class="pagination-list">
               <li class="pagination-item">

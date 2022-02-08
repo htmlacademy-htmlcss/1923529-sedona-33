@@ -38,10 +38,12 @@ body {
   display: block;
   margin-right: 30px;
 }
-.navigation {
-  display: flex;
+.header-container {
   width: 1060px;
   margin: 0 auto;
+}
+.navigation {
+  display: flex;
 }
 .navigation-list {
   margin: 0;
