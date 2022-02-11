@@ -2,14 +2,14 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: url(/1923529-sedona-33/fonts/ptsans-400.woff2) format(woff2);
+  src: url(/fonts/ptsans-400.woff2) format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: url(/1923529-sedona-33/fonts/ptsans-700.woff2) format(woff2);
+  src: url(/fonts/ptsans-700.woff2) format("woff2");
   font-display: swap;
 }
 html {
@@ -26,6 +26,16 @@ body {
   line-height: 21px;
   color: #000000;
   background-color: #ffffff;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* Header */
@@ -49,11 +59,14 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  width: 400px;
+  width: 450px;
+  display: flex;
+  align-items: center;
 }
 .navigation-user {
   width: 300px;
   margin-left: auto;
+  justify-content: end;
 }
 .navigation-item a {
   color: #000000;
@@ -62,6 +75,13 @@ body {
   line-height: 26px;
   text-decoration: none;
   text-align: center;
+  display: block;
+  padding: 20px 17px;
+  flex-wrap: wrap;
+}
+.navigation-user a {
+  min-width: 18px;
+  min-height: 18px;
 }
 .navigation-item .navigation-bottom {
   text-transform: uppercase;
@@ -69,6 +89,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
+  padding: 9px 15px;
 }
 
 /* Header */
@@ -91,12 +112,22 @@ body {
 .welcome {
   background-color: white;
   color: black;
-  background-image: url(/1923529-sedona-33/images/index-background.jpg);
+  background-image: url(/images/index-background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  padding-top: 51px;
+}
+.welcome img:nth-of-type(1) {
+  margin-bottom: 11px;
+}
+.welcome img:nth-of-type(2) {
+  margin-bottom: 53px;
+}
+.welcome img:nth-of-type(3) {
+  margin-bottom: 26px;
 }
 .picture {
-  background-image: url(/1923529-sedona-33/images/Vector.png);
+  background-image: url(/images/Vector.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
   height: 57px;
@@ -109,6 +140,10 @@ body {
 .description {
   color: #000000;
   background-color: #ffffff;
+  padding-top: 63px;
+}
+.description p {
+  margin: 0;
 }
 .description p:first-of-type {
   color: inherit;
@@ -117,6 +152,7 @@ body {
   line-height: 36px;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 31px;
 }
 .description p:last-of-type {
   color: #333333;
@@ -124,6 +160,7 @@ body {
   font-size: 22px;
   line-height: 36px;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 /* Description */
@@ -149,6 +186,8 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #000000;
+  margin-top: 97px;
+  margin-bottom: 30px;
 }
 .advantages-item span,
 .advantages-item p {
@@ -158,6 +197,13 @@ body {
   text-align: center;
   color: #333333;
   display: block;
+}
+.advantages-item p {
+  margin-top: 30px;
+  margin-bottom: 108px;
+}
+.advantages-item img {
+  width: 100%;
 }
 .advantages-list li:nth-child(1),
 .advantages-list li:nth-child(7) {
@@ -188,10 +234,17 @@ body {
 /* Advantages */
 
 /* Search  */
-
+.search h2,
+.search p,
+.subscription h2,
+.subscription p {
+  margin: 0;
+}
 .search {
   background-color: #ffffff;
   color: black;
+  padding-top: 91px;
+  padding-bottom: 101px;
 }
 .search h2 {
   font-weight: bold;
@@ -200,6 +253,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: inherit;
+  margin-bottom: 29px;
 }
 .search p {
   font-weight: normal;
@@ -207,6 +261,7 @@ body {
   line-height: 26px;
   text-align: center;
   color: #333333;
+  margin-bottom: 64px;
 }
 .search a {
   font-weight: bold;
@@ -217,6 +272,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   background: #756257;
+  padding: 15px 129px;
 }
 .search div {
   text-align: center;
@@ -229,9 +285,11 @@ body {
 .subscription {
   background-color: black;
   color: white;
-  background-image: url(/1923529-sedona-33/images/background.jpg);
+  background-image: url(/images/background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 .subscription h2 {
   font-weight: bold;
@@ -240,6 +298,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  margin-bottom: 29px;
 }
 .subscription p {
   font-weight: normal;
@@ -247,6 +306,7 @@ body {
   line-height: 26px;
   text-align: center;
   color: #ffffff;
+  margin-bottom: 46px;
 }
 .subscription-field {
   font-weight: normal;
@@ -280,17 +340,29 @@ body {
   width: 1060px;
   margin: 0 auto;
   justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  align-items: center;
 }
 .social-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  width: 150px;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .social-item a {
+  display: block;
   text-decoration: none;
   text-align: center;
   color: #000000;
+  min-width: 20px;
+  min-height: 18px;
+  padding: 15px;
+}
+.social-item .zero {
+  padding-left: 0;
 }
 .phone {
   font-weight: normal;
@@ -317,15 +389,26 @@ body {
 .filters {
   background-color: black;
   color: white;
-  background-image: url(/1923529-sedona-33/images/catalog-background\ 1.jpg);
+  background-image: url(/images/catalog-background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  padding-top: 35px;
 }
 .filters h2 {
   font-weight: bold;
   font-size: 60px;
   line-height: 78px;
   color: #ffffff;
+  margin: 0;
+  margin-bottom: 8px;
+}
+.breadcrumbs-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 45px;
 }
 .breadcrumbs-item a {
   font-weight: normal;
@@ -333,6 +416,10 @@ body {
   line-height: 21px;
   color: #ffffff;
   text-decoration: none;
+  min-width: 12px;
+  min-height: 12px;
+  display: block;
+  margin-right: 26px;
 }
 .filters-group legend {
   font-weight: bold;
@@ -377,12 +464,29 @@ body {
 .hotels-container {
   width: 1060px;
   margin: 0 auto;
+  padding-top: 44px;
 }
 .hotels-container fieldset {
   display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  margin-bottom: 53px;
 }
 .sorting-list {
+  margin: 0;
+  padding: 0;
   margin-left: auto;
+  display: flex;
+  list-style-type: none;
+}
+.sorting-item {
+  min-width: 48px;
+  max-width: 48px;
+  margin-right: 8px;
+}
+.sorting-item:last-child {
+  margin-right: 0;
 }
 .hotels-list {
   margin: 0;
@@ -390,16 +494,19 @@ body {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 34px;
 }
 .hotels-item {
   width: 340px;
 }
 .hotels p:only-of-type {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 39px;
   text-transform: uppercase;
   color: #000000;
+  margin: 0;
+  margin-right: 192px;
 }
 .select-control {
   font-weight: normal;
@@ -450,6 +557,9 @@ body {
 }
 .hotels-container .more {
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 .download-button {
   font-weight: bold;
@@ -464,6 +574,14 @@ body {
 .pagination {
   display: flex;
   justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.pagination-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
 }
 .pagination-item a {
   text-decoration: none;
@@ -473,6 +591,13 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   background: #83b3d3;
+  padding: 15px 22px;
+}
+.pagination-item {
+  margin-right: 8px;
+}
+.pagination-item:last-child {
+  margin-right: 0;
 }
 .pagination-item .pagination-current {
   color: #000000;
@@ -492,6 +617,8 @@ body {
 .subscription-catalog {
   background-color: #ffffff;
   color: black;
+  padding-top: 73px;
+  padding-bottom: 140px;
 }
 .subscription-catalog h2 {
   font-weight: bold;
@@ -500,6 +627,8 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #000000;
+  margin-top: 0;
+  margin-bottom: 46px;
 }
 .subscription-catalog p {
   font-weight: normal;
@@ -507,6 +636,8 @@ body {
   line-height: 26px;
   text-align: center;
   color: #333333;
+  margin-top: 0;
+  margin-bottom: 46px;
 }
 .subscription-catalog form {
   text-align: center;
