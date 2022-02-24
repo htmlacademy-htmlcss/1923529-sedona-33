@@ -2,14 +2,14 @@
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: url(/fonts/ptsans-400.woff2) format("woff2");
+  src: url(../fonts/ptsans-400.woff2) format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: url(/fonts/ptsans-700.woff2) format("woff2");
+  src: url(../fonts/ptsans-700.woff2) format("woff2");
   font-display: swap;
 }
 html {
@@ -69,6 +69,7 @@ body {
   justify-content: end;
 }
 .navigation-item a {
+  position: relative;
   color: #000000;
   font-weight: bold;
   font-size: 20px;
@@ -76,12 +77,36 @@ body {
   text-decoration: none;
   text-align: center;
   display: block;
-  padding: 20px 17px;
+  padding: 20px 12px;
   flex-wrap: wrap;
+}
+.navigation-current::before {
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  height: 2px;
+  background-color: #756257;
+  content: "";
+}
+.navigation-item a:hover {
+  color: #756257;
+}
+.navigation-item a:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+.navigation-item a:hover .navigation-icon {
+  fill: #756257;
+}
+.navigation-item a:active .navigation-icon {
+  fill: rgba(117, 98, 87, 0.3);
 }
 .navigation-user a {
   min-width: 18px;
   min-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navigation-item .navigation-bottom {
   text-transform: uppercase;
@@ -89,9 +114,21 @@ body {
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
-  padding: 9px 15px;
+  padding: 9px 34px;
+  margin-left: 20px;
+  border-radius: 4px;
+  outline: 0;
 }
-
+.navigation-item .navigation-bottom:hover {
+  background-color: #615048;
+  color: #ffffff;
+}
+.navigation-item .navigation-bottom:focus {
+  box-shadow: 0 0 0 3px #83b3d3;
+}
+.navigation-item .navigation-bottom:active {
+  color: rgba(255, 255, 255, 0.3);
+}
 /* Header */
 
 /* Main */
@@ -110,9 +147,9 @@ body {
 }
 
 .welcome {
-  background-color: white;
-  color: black;
-  background-image: url(/images/index-background.jpg);
+  background-color: black;
+  color: white;
+  background-image: url(../images/index-background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   padding-top: 51px;
@@ -127,7 +164,7 @@ body {
   margin-bottom: 26px;
 }
 .picture {
-  background-image: url(/images/Vector.png);
+  background-image: url(../images/Vector.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
   height: 57px;
@@ -244,6 +281,20 @@ body {
   background: rgba(131, 179, 211, 0.2);
   width: 400px;
 }
+.advantages-icon p {
+  margin-top: 20px;
+  margin-bottom: 85px;
+}
+.advantages-icon h3 {
+  margin: 0;
+}
+.advantages-icon svg {
+  margin-top: 89px;
+  margin-bottom: 23px;
+}
+.advantages-text p {
+  margin-bottom: 108px;
+}
 
 /* Advantages */
 
@@ -288,6 +339,18 @@ body {
   text-decoration: none;
   background: #756257;
   padding: 15px 129px;
+  border-radius: 10px;
+  outline: 0;
+}
+.search a:hover {
+  background-color: #615048;
+  color: #ffffff;
+}
+.search a:focus {
+  box-shadow: 0 0 0 3px #83b3d3;
+}
+.search a:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 .search div {
   text-align: center;
@@ -300,7 +363,7 @@ body {
 .subscription {
   background-color: black;
   color: white;
-  background-image: url(/images/background.jpg);
+  background-image: url(../images/background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   padding-top: 94px;
@@ -326,6 +389,7 @@ body {
 }
 .subscription-field,
 .subscription-button {
+  outline: 0;
   padding: 0;
   border: 0;
 }
@@ -335,9 +399,15 @@ body {
   line-height: 26px;
   color: #000000;
   background: #f2f2f2;
-}
-.subscription-field::placeholder {
+  border-radius: 10px 0px 0px 10px;
   padding-left: 22px;
+}
+.subscription-field:hover {
+  background-color: #e6e6e6;
+}
+.subscription-field:focus {
+  outline: 0;
+  box-shadow: inset 0 0 0 3px #83b3d3;
 }
 .subscription-button {
   font-family: "PT Sans", sans-serif;
@@ -349,6 +419,17 @@ body {
   color: #ffffff;
   background: #83b3d3;
   padding: 17px 23px;
+  display: inline-block;
+  border-radius: 0px 10px 10px 0px;
+}
+.subscription-button:hover {
+  background-color: #68a2ca;
+}
+.subscription-button:focus {
+  box-shadow: inset 0 0 0 3px #756257;
+}
+.subscription-button:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 .subscription form {
   text-align: center;
@@ -378,21 +459,40 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  width: 200px;
+  max-width: 200px;
   display: flex;
   flex-wrap: wrap;
 }
+.social-item {
+  margin-right: 8px;
+}
+.social-item:last-child {
+  margin-right: 0;
+}
 .social-item a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   text-align: center;
   color: #000000;
   min-width: 20px;
   min-height: 18px;
-  padding: 15px;
+  padding: 13px 11px;
+  outline: 0;
 }
-.social-item .zero {
-  padding-left: 0;
+.social-icon {
+  fill: #83b3d3;
+}
+.social-item a:hover .social-icon {
+  fill: #68a2ca;
+}
+.social-item a:focus {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+  border-radius: 10px;
+}
+.social-item a:active .social-icon {
+  fill: rgba(104, 162, 202, 0.3);
 }
 .phone {
   font-weight: normal;
@@ -402,7 +502,34 @@ body {
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
+  padding: 15px;
+  outline: 0;
 }
+.phone:hover {
+  color: #756257;
+}
+.phone:focus {
+  box-shadow: 0 0 0 3px #83b3d3;
+  border-radius: 10px;
+}
+.phone:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+.academy {
+  padding: 18px 22px;
+  outline: 0;
+}
+.academy:hover .academy-logo {
+  fill: #756257;
+}
+.academy:focus {
+  box-shadow: 0 0 0 3px #83b3d3;
+  border-radius: 10px;
+}
+.academy:active .academy-logo{
+  fill: rgba(117, 98, 87, 0.3);
+}
+
 /* Footer */
 
 /* Стили каталога */
@@ -419,7 +546,7 @@ body {
 .filters {
   background-color: black;
   color: white;
-  background-image: url(/images/catalog-background.jpg);
+  background-image: url(../images/catalog-background.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   padding-top: 35px;
@@ -448,8 +575,22 @@ body {
   text-decoration: none;
   min-width: 12px;
   min-height: 12px;
-  display: block;
+}
+.breadcrumbs-item {
+  position: relative;
   margin-right: 26px;
+}
+.breadcrumbs-item::after {
+  position: absolute;
+  content: "";
+  top: 7px;
+  right: -14px;
+  width: 5px;
+  height: 8px;
+  background-image: url(../images/image.svg);
+}
+.breadcrumbs-item:last-child::after {
+  content: none;
 }
 .filters-group legend {
   font-weight: bold;
@@ -480,6 +621,7 @@ body {
   color: #ffffff;
   background: #83b3d3;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 .catalog-filters button:last-of-type {
   padding: 0;
@@ -520,12 +662,14 @@ body {
   list-style-type: none;
 }
 .sorting-item {
-  min-width: 48px;
-  max-width: 48px;
   margin-right: 8px;
 }
 .sorting-item:last-child {
   margin-right: 0;
+}
+.sorting-card {
+  display: inline-flex;
+  padding: 15px 14px;
 }
 .hotels-list {
   margin: 0;
@@ -561,6 +705,7 @@ body {
 }
 .hotels-item a {
   text-decoration: none;
+  border-radius: 4px;
 }
 .hotels-link h3 {
   margin: 0;
@@ -586,6 +731,7 @@ body {
   text-align: center;
   background-color: #f2f2f2;
   padding: 8px 33px;
+  border-radius: 4px;
 }
 .hotels-item a:nth-of-type(1) {
   grid-column: 1/-1;
@@ -622,12 +768,42 @@ body {
   margin-top: 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.stars {
+  display: flex;
+  justify-content: space-between;
+}
+.star {
+  background-image: url(../images/star.svg);
+  background-size: 17px 18px;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 17px;
+}
+.hotel-1 {
+  width: 91px;
+  height: 17px;
+}
+.hotel-2 {
+  width: 68px;
+  height: 17px;
+}
+.hotel-3 {
+  width: 43px;
+  height: 17px;
+}
+.hotel-4 {
+  width: 43px;
+  height: 17px;
 }
 .hotels-container .more {
   text-align: center;
   padding-top: 47px;
   padding-bottom: 47px;
   margin-bottom: 30px;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
 }
 .download-button {
   font-weight: bold;
@@ -639,6 +815,8 @@ body {
   text-decoration: none;
   background: #83b3d3;
   padding: 17px 238px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 }
 .pagination {
   display: flex;
@@ -661,6 +839,7 @@ body {
   color: #ffffff;
   background: #83b3d3;
   padding: 15px 22px;
+  border-radius: 4px;
 }
 .pagination-item {
   margin-right: 8px;
