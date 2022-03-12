@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>HTML Academy: Седона-Главная</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -52,7 +53,7 @@
                 <span class="visually-hidden">Поиск</span>
               </a>
             </li>
-            <li class="navigation-item navigation-favorite">
+            <li class="navigation-item">
               <a href="#">
                 <svg
                   class="navigation-icon"
@@ -69,6 +70,7 @@
                 </svg>
                 <span class="visually-hidden">Лайк</span>
               </a>
+              <span class="navigation-favorite">12</span>
             </li>
             <li class="navigation-item">
               <a class="navigation-button" href="#">Хочу сюда!</a>
@@ -128,28 +130,31 @@
           <li class="advantages-item">
             <img src="images/city.jpg" width="800" height="384" alt="Город" />
           </li>
-          <li class="advantages-item advantages-icon advantages-house">
+          <li class="advantages-item advantages-icon">
+            <div class="advantages-house"></div>
             <span class="visually-hidden">Дом</span>
             <h3>Жильё</h3>
-            <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+            <p>Рекомендуем пожить <br> в настоящем мотеле, <br> всё как в кино!</p>
           </li>
-          <li class="advantages-item advantages-icon advantages-eat">
+          <li class="advantages-item advantages-icon">
+            <div class="advantages-eat"></div>
             <span class="visually-hidden">Бургер</span>
             <h3>Еда</h3>
             <p>
-              Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!
+              Всегда заказывайте <br> топовый фирменный бургер, вы не разочаруетесь!
             </p>
           </li>
-          <li class="advantages-item advantages-icon advantages-souvenir">
+          <li class="advantages-item advantages-icon">
+            <div class="advantages-souvenir"></div>
             <span class="visually-hidden">Подарок</span>
             <h3>Сувениры</h3>
-            <p>Не только китайского, но и настоящего местного производства!</p>
+            <p>Не только китайского, <br> но и настоящего местного производства!</p>
           </li>
           <li class="advantages-item">
             <img src="images/Bridge.jpg" width="800" height="384" alt="Мост" />
           </li>
           <li class="advantages-item advantages-desc">
-            <h3>Там есть мост дьявола</h3>
+            <h3>Там есть <br> мост дьявола</h3>
             <span>— №2 —</span>
             <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
           </li>
@@ -176,10 +181,10 @@
       <section class="search">
         <h2>Заинтересовались?</h2>
         <p>
-          Укажите предполагаемые даты поездки, и мы покажем вам лучшие
+          Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие
           предложения гостиниц в Седоне
         </p>
-        <div><a href="catalog.html">Поиск гостиницы в седоне</a></div>
+        <a href="catalog.html">Поиск гостиницы в седоне</a>
       </section>
       <!--Search-->
 
@@ -266,7 +271,7 @@
             </a>
           </li>
         </ul>
-        <a class="phone" href="tel:+78128121212">+7 812 812-12-12</a>
+        <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
         <a class="academy" href="https://htmlacademy.ru/"
           ><svg
             class="academy-logo"
@@ -283,10 +288,14 @@
       </div>
     </footer>
 
+    <!--Footer-->
+
+    <!-- Modal window -->
+
     <div class="modal-container modal-container-close">
       <div class="modal">
         <section class="modal-content">
-          <div>
+          <div class="title">
             <h2>Поиск гостиницы в Седоне</h2>
             <button class="close-button">
               <svg
@@ -310,129 +319,143 @@
             action="https://echo.htmlacademy.ru/"
             method="post"
           >
-            <label class="data-lable" for="arrival-date">Дата заезда:</label>
-            <input
-              class="data"
-              type="text"
-              id="arrival-date"
-              name="arrival-date"
-              placeholder="Укажите дату"
-            />
-            <span class="mistake">Сообщение об ошибке</span>
-            <label class="data-lable" for="departure-date">Дата выезда:</label>
-            <input
-              class="data"
-              type="text"
-              id="departure-date"
-              name="departure-date"
-              placeholder="Укажите дату"
-            />
-            <span class="success">Сообщение об успехе</span>
+            <label for="arrival-date">Дата заезда:</label>
+            <div class="data-container">
+              <input
+                class="data"
+                type="text"
+                id="arrival-date"
+                name="arrival-date"
+                placeholder="Укажите дату"
+                required
+              />
+              <span class="mistake">Сообщение об ошибке</span>
+            </div>
+            <label for="departure-date">Дата выезда:</label>
+            <div class="data-container">
+              <input
+                class="data"
+                type="text"
+                id="departure-date"
+                name="departure-date"
+                placeholder="Укажите дату"
+                required
+              />
+              <span class="success">Сообщение об успехе</span>
+            </div>
             <label for="adults">Взрослые:</label>
 
-            <button class="adults-minus minus" type="button">
-              <svg
-                class="counter"
-                aria-hidden="true"
-                focusable="false"
-                width="13"
-                height="1"
-                viewBox="0 0 13 1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0v1h13V0H0Z" / >
-              </svg>
-            </button>
-
-            <input
-              class="people"
-              type="number"
-              id="adults"
-              name="adults"
-              placeholder="0"
-            />
-            <button class="adults-plus plus" type="button">
-              <svg
-                class="counter"
-                aria-hidden="true"
-                focusable="false"
-                width="13"
-                height="13"
-                viewBox="0 0 13 13"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M13 6H7V0H6v6H0v1h6v6h1V7h6V6Z" />
-              </svg>
-            </button>
-            <label class="children" for="children">Дети:</label>
-            <span class="tooltip">
-              <button
-                class="tooltip-toggle"
-                type="button"
-                aria-labelledby="tooltip-label"
-              >
+            <div class="adults-container">
+              <button class="adults-minus minus" type="button">
                 <svg
-                  class="tooltip-icon"
-                  width="1"
-                  height="9"
-                  viewBox="0 0 1 9"
-                  fill="none"
+                  class="counter"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="13"
+                  height="1"
+                  viewBox="0 0 13 1"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#a)" fill="#fff">
-                    <path d="M0 9h1V3H0v6ZM1 0H0v1h1V0Z" />
-                  </g>
-                  <defs>
-                    <clipPath id="a">
-                      <path fill="#fff" d="M0 0h1v9H0z" />
-                    </clipPath>
-                  </defs>
+                  <path d="M0 0v1h13V0H0Z" />
                 </svg>
               </button>
-              <span class="tooltip-text" role="tooltip" id="tooltip-label"
-                >Укажите количество детей, которые будут с вами, возраст которых
-                от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span
-              >
-            </span>
-            <button class="children-minus minus" type="button">
-              <svg
-                class="counter"
-                aria-hidden="true"
-                focusable="false"
-                width="13"
-                height="1"
-                viewBox="0 0 13 1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0v1h13V0H0Z" />
-              </svg>
-            </button>
-            <input
-              class="people"
-              type="number"
-              id="children"
-              name="children"
-              placeholder="0"
-            />
-            <button class="children-plus plus" type="button">
-              <svg
-                class="counter"
-                aria-hidden="true"
-                focusable="false"
-                width="13"
-                height="13"
-                viewBox="0 0 13 13"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M13 6H7V0H6v6H0v1h6v6h1V7h6V6Z" />
-              </svg>
-            </button>
+              <input
+                class="people"
+                type="number"
+                id="adults"
+                name="adults"
+                placeholder="0"
+                required
+              />
+              <button class="adults-plus plus" type="button">
+                <svg
+                  class="counter"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M13 6H7V0H6v6H0v1h6v6h1V7h6V6Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="tooltip-container">
+              <label class="children" for="children">Дети:</label>
+              <span class="tooltip">
+                <button
+                  class="tooltip-toggle"
+                  type="button"
+                  aria-labelledby="tooltip-label"
+                >
+                  <svg
+                    class="tooltip-icon"
+                    width="1"
+                    height="9"
+                    viewBox="0 0 1 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#a)" fill="#fff">
+                      <path d="M0 9h1V3H0v6ZM1 0H0v1h1V0Z" />
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path fill="#fff" d="M0 0h1v9H0z" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+                <span class="tooltip-text" role="tooltip" id="tooltip-label"
+                  >Укажите количество детей, которые будут с вами, возраст
+                  которых от 6 до 18 лет. Дети до 6 лет размещаются
+                  бесплатно.</span
+                >
+              </span>
+            </div>
+            <div class="children-container">
+              <button class="children-minus minus" type="button">
+                <svg
+                  class="counter"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="13"
+                  height="1"
+                  viewBox="0 0 13 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0v1h13V0H0Z" />
+                </svg>
+              </button>
+              <input
+                class="people"
+                type="number"
+                id="children"
+                name="children"
+                placeholder="0"
+                required
+              />
+              <button class="children-plus plus" type="button">
+                <svg
+                  class="counter"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M13 6H7V0H6v6H0v1h6v6h1V7h6V6Z" />
+                </svg>
+              </button>
+            </div>
             <a href="#">Найти</a>
           </form>
         </section>
       </div>
     </div>
 
-    <!--Footer-->
+    <!-- Modal window -->
   </body>
 </html>
