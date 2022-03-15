@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
     <link rel="stylesheet" href="styles/styles.css" />
     <title>HTML Academy: Седона-Каталог</title>
   </head>
@@ -24,7 +25,7 @@
             />
           </a>
           <h2 class="visually-hidden">Меню</h2>
-          <ul class="navigation-list">
+          <ul class="navigation-list indent">
             <li class="navigation-item">
               <a href="index.html">Главная</a>
             </li>
@@ -71,6 +72,7 @@
                 </svg>
                 <span class="visually-hidden">Лайк</span>
               </a>
+              <span class="navigation-favorite">12</span>
             </li>
             <li class="navigation-item">
               <a class="navigation-button" href="#">Хочу сюда!</a>
@@ -122,7 +124,7 @@
               <legend>Инфраструктура:</legend>
               <ul class="filters-list">
                 <li class="filters-item">
-                  <label class="control">
+                  <label tabindex="0" class="control">
                     <input
                       class="visually-hidden control-input"
                       type="checkbox"
@@ -134,9 +136,9 @@
                   </label>
                 </li>
                 <li class="filters-item">
-                  <label class="control control-input">
+                  <label tabindex="0" class="control">
                     <input
-                      class="visually-hidden"
+                      class="visually-hidden control-input"
                       type="checkbox"
                       name="parking"
                       checked
@@ -146,9 +148,9 @@
                   </label>
                 </li>
                 <li class="filters-item">
-                  <label class="control control-input">
+                  <label tabindex="0" class="control">
                     <input
-                      class="visually-hidden"
+                      class="visually-hidden control-input"
                       type="checkbox"
                       name="Wi-Fi"
                     />
@@ -162,7 +164,7 @@
               <legend>Тип жилья:</legend>
               <ul class="filters-list">
                 <li class="filters-item">
-                  <label class="control">
+                  <label tabindex="0" class="control">
                     <input
                       class="visually-hidden control-input"
                       type="radio"
@@ -170,31 +172,31 @@
                       value="hotel"
                       checked
                     />
-                    <span class="control-mark"></span>
+                    <span class="control-mark control-radio"></span>
                     <span class="control-label">Гостиница</span>
                   </label>
                 </li>
                 <li class="filters-item">
-                  <label class="control control-input">
+                  <label tabindex="0" class="control">
                     <input
-                      class="visually-hidden"
+                      class="visually-hidden control-input"
                       type="radio"
                       name="type-of-housing"
                       value="the-motel"
                     />
-                    <span class="control-mark"></span>
+                    <span class="control-mark control-radio"></span>
                     <span class="control-label">Мотель</span>
                   </label>
                 </li>
                 <li class="filters-item">
-                  <label class="control control-input">
+                  <label tabindex="0" class="control">
                     <input
-                      class="visually-hidden"
+                      class="visually-hidden control-input"
                       type="radio"
                       name="type-of-housing"
                       value="apartments"
                     />
-                    <span class="control-mark"></span>
+                    <span class="control-mark control-radio"></span>
                     <span class="control-label">Апартаменты</span>
                   </label>
                 </li>
@@ -222,13 +224,13 @@
                   </label>
                 </div>
                 <div class="range-scale">
-                  <div class="range-bar">
-                    <button class="range-toggle toggle-min">
+                  <div class="range-bar" style="width: 237px; left: 0">
+                    <button class="range-toggle toggle-min" type="button">
                       <span class="visually-hidden"
                         >Изменить минимальную цену.</span
                       >
                     </button>
-                    <button class="range-toggle toggle-max">
+                    <button class="range-toggle toggle-max" type="button">
                       <span class="visually-hidden"
                         >Изменить максимальную цену.</span
                       >
@@ -239,7 +241,7 @@
             </fieldset>
             <div class="btn">
               <button class="filters-button" type="submit">Применить</button>
-              <button class="filters-button" type="submit">Сбросить</button>
+              <button class="filters-button" type="reset">Сбросить</button>
             </div>
           </form>
         </div>
@@ -252,26 +254,46 @@
           <h2 class="visually-hidden">Каталог</h2>
           <fieldset>
             <p>Найдено гостиниц: 38</p>
-            <legend class="visually-hidden" for="sorting">Сортировка</legend>
-            <select
-              class="select-control"
-              id="sorting"
-              name="sorting"
-              onChange=""
-            >
-              <option title="Переход к дешёвым отелям" value="#">
-                Сначала дешёвые
-              </option>
-              <option title="Переход к дорогим отелям" value="#">
-                Сначала дорогие
-              </option>
-              <option title="Переход к популярным отелям" value="#">
-                Сначала популярные
-              </option>
-            </select>
+            <div class="select">
+              <select
+                class="select-control"
+                aria-label="Сортировка"
+                onChange=""
+              >
+                <option title="Переход к дешёвым отелям" value="cheap">
+                  Сначала дешёвые
+                </option>
+                <option title="Переход к дорогим отелям" value="expensive">
+                  Сначала дорогие
+                </option>
+                <option title="Переход к популярным отелям" value="popular">
+                  Сначала популярные
+                </option>
+              </select>
+              <svg
+                class="select-arrow"
+                aria-hidden="true"
+                focusable="false"
+                width="12"
+                height="7"
+                viewBox="0 0 12 7"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g opacity=".3" clip-path="url(#b)">
+                  <path
+                    d="m6.6 6.7 5.1-5.3c.3-.3.3-.9 0-1.2-.3-.3-.9-.3-1.2 0L6 4.9 1.5.2C1.2-.1.6-.1.3.2.1.3 0 .6 0 .8c0 .2.1.4.3.6l5.1 5.3c.3.4.9.4 1.2 0Z"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="b">
+                    <path fill="#fff" d="M0 0h12v7H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
             <ul class="sorting-list">
               <li class="sorting-item">
-                <button class="sorting-card card sorting-current">
+                <button class="sorting-card card sorting-current" type="button">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -290,7 +312,7 @@
                 </button>
               </li>
               <li class="sorting-item">
-                <button class="sorting-card slaid">
+                <button class="sorting-card slaid" type="button">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -309,7 +331,7 @@
                 </button>
               </li>
               <li class="sorting-item">
-                <button class="sorting-card list">
+                <button class="sorting-card list" type="button">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -348,13 +370,13 @@
                 <a class="more-button" href="#">Подробнее</a>
                 <a class="favourites-button" href="#">В избранное</a>
                 <div class="rating">
-                  <div class="stars hotel-1">
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
+                  <ul class="star-list">
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
                     <span class="visually-hidden">Звездочки</span>
-                  </div>
+                  </ul>
                   <b>Рейтинг: 8,5</b>
                 </div>
               </div>
@@ -377,12 +399,12 @@
                 <a class="more-button" href="#">Подробнее</a>
                 <a class="favourites-button" href="#">В избранное</a>
                 <div class="rating">
-                  <div class="stars hotel-2">
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
+                  <ul class="star-list">
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
                     <span class="visually-hidden">Звездочки</span>
-                  </div>
+                  </ul>
                   <b>Рейтинг: 8,9</b>
                 </div>
               </div>
@@ -407,11 +429,11 @@
                   >В избранном</a
                 >
                 <div class="rating">
-                  <div class="stars hotel-3">
-                    <span class="star"></span>
-                    <span class="star"></span>
+                  <ul class="star-list">
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
                     <span class="visually-hidden">Звездочки</span>
-                  </div>
+                  </ul>
                   <b>Рейтинг: 9,2</b>
                 </div>
               </div>
@@ -434,17 +456,17 @@
                 <a class="more-button" href="#">Подробнее</a>
                 <a class="favourites-button" href="#">В избранное</a>
                 <div class="rating">
-                  <div class="stars hotel-4">
-                    <span class="star"></span>
-                    <span class="star"></span>
+                  <ul class="star-list">
+                    <li class="star-item"></li>
+                    <li class="star-item"></li>
                     <span class="visually-hidden">Звездочки</span>
-                  </div>
+                  </ul>
                   <b>Рейтинг: 9,2</b>
                 </div>
               </div>
             </li>
           </ul>
-          <div class="more">
+          <div class="border">
             <a class="download-button" href="#"> Загрузить ещё </a>
           </div>
           <div class="pagination">
@@ -469,18 +491,40 @@
               </li>
             </ul>
             <form class="sorting-type">
-              <label for="sorting-number">Гостиниц на странице:</label>
-              <select
-                class="select-control"
-                id="sorting-number"
-                name="sorting"
-                onChange=""
-              >
-                <option title="Переход к 4 отелям" value="#">4</option>
-                <option title="Переход к 6 отелям" value="#">6</option>
-                <option title="Переход к 8 отелям" value="#">8</option>
-                <option title="Переход к 10 отелям" value="#">10</option>
-              </select>
+              <div class="select">
+                <label for="sorting-number">Гостиниц на странице:</label>
+                <select
+                  class="select-control select-number"
+                  id="sorting-number"
+                  name="sorting"
+                  onChange=""
+                >
+                  <option title="Переход к 4 отелям" value="#">4</option>
+                  <option title="Переход к 6 отелям" value="#">6</option>
+                  <option title="Переход к 8 отелям" value="#">8</option>
+                  <option title="Переход к 10 отелям" value="#">10</option>
+                </select>
+                <svg
+                  class="select-arrow"
+                  aria-hidden="true"
+                  focusable="false"
+                  width="12"
+                  height="7"
+                  viewBox="0 0 12 7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity=".3" clip-path="url(#a)">
+                    <path
+                      d="m6.6 6.7 5.1-5.3c.3-.3.3-.9 0-1.2-.3-.3-.9-.3-1.2 0L6 4.9 1.5.2C1.2-.1.6-.1.3.2.1.3 0 .6 0 .8c0 .2.1.4.3.6l5.1 5.3c.3.4.9.4 1.2 0Z"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h12v7H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
             </form>
           </div>
         </div>
@@ -516,78 +560,61 @@
       <div class="footer-container">
         <ul class="social-list">
           <li class="social-item">
-            <a href="#">
+            <a href="https://twitter.com/htmlacademy_ru">
               <span class="visually-hidden">Твиттер</span
               ><svg
+                class="social-icon"
                 aria-hidden="true"
                 focusable="false"
                 width="18"
                 height="15"
                 viewBox="0 0 18 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#a)">
-                  <path
-                    d="M11.6.2c1.8-.5 3.2.3 3.8 1.2.7-.2 1.4-.5 2.1-.7 0 .9-.6 1.5-.9 1.8.7.1 1.4-.6 1.4-.6-.2 1-1.1 1.8-1.7 2C16.1 10.7 13 15.1 5.7 15h-.5c-.4 0-4.4-.5-5.2-1.9 2.4.2 4.1-.4 5-1.2-1-.3-2.9-.4-3.2-2.9.4.1.6.2 1.3.1C1.8 8.3.4 7.5.5 5.3c.3.3 1.1.5 1.4.5C1.1 5.6-.2 2.5.9.9c1.9 1.9 4 3.6 7.6 3.8C8.7 2.3 9.7.8 11.6.2Z"
-                    fill="#83B3D3"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h18v15H0z" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="#">
-              <span class="visually-hidden">Фейсбук</span>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                width="10"
-                height="18"
-                viewBox="0 0 10 18"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7 0C4.8 0 3 1.8 3 4v2H0v4h3v8h4v-8h3V6H7V4h3V0H7Z"
-                  fill="#83B3D3"
+                  d="M11.6.194c1.8-.5 3.2.3 3.8 1.2.7-.2 1.4-.5 2.1-.7 0 .9-.6 1.5-.9 1.8.7.1 1.4-.6 1.4-.6-.2 1-1.1 1.8-1.7 2-.2 6.8-3.3 11.2-10.6 11.1h-.5c-.4 0-4.4-.5-5.2-1.9 2.4.2 4.1-.4 5-1.2-1-.3-2.9-.4-3.2-2.9.4.1.6.2 1.3.1-1.3-.8-2.7-1.6-2.6-3.8.3.3 1.1.5 1.4.5-.8-.2-2.1-3.3-1-4.9 1.9 1.9 4 3.6 7.6 3.8.2-2.4 1.2-3.9 3.1-4.5Z"
                 />
               </svg>
             </a>
           </li>
           <li class="social-item">
-            <a href="#">
+            <a href="https://www.facebook.com/htmlacademy">
+              <span class="visually-hidden">Фейсбук</span>
+              <svg
+                class="social-icon"
+                aria-hidden="true"
+                focusable="false"
+                width="10"
+                height="18"
+                viewBox="0 0 10 18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7 0C4.8 0 3 1.8 3 4v2H0v4h3v8h4v-8h3V6H7V4h3V0H7Z" />
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.youtube.com/c/HTMLAcademyRUS">
               <span class="visually-hidden">Ютуб</span>
               <svg
+                class="social-icon"
                 aria-hidden="true"
                 focusable="false"
                 width="20"
-                height="16"
-                viewBox="0 0 20 16"
-                fill="none"
+                height="14"
+                viewBox="0 0 20 14"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clip-path="url(#a)">
-                  <path
-                    d="M17 0H2.9C1.2 0 0 1.5 0 3.2v9.5C0 14.5 1.2 16 2.9 16h14.3c1.5 0 2.9-1.5 2.9-3.2V3.2C19.9 1.5 18.7 0 17 0ZM7 11.8V4.2L13.7 8 7 11.8Z"
-                    fill="#83B3D3"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="a">
-                    <path fill="#fff" d="M0 0h20v16H0z" />
-                  </clipPath>
-                </defs>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17.814.418c.86.23 1.537.907 1.768 1.768C19.998 3.746 20 7 20 7s0 3.255-.418 4.814a2.505 2.505 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.418a2.505 2.505 0 0 1-1.768-1.769C0 10.255 0 7 0 7s0-3.255.418-4.814A2.505 2.505 0 0 1 2.186.418C3.746 0 10 0 10 0s6.255 0 7.814.418Zm-4.62 6.583-5.196 3V4l5.196 3Z"
+                />
               </svg>
             </a>
           </li>
         </ul>
-        <a class="phone" href="tel:+78128121212">+7 812 812-12-12</a>
+        <a class="phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
         <a class="academy" href="https://htmlacademy.ru/"
           ><svg
             class="academy-logo"
