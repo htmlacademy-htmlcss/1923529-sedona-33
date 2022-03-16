@@ -283,6 +283,8 @@ img {
   align-items: center;
   padding-top: 98px;
   padding-bottom: 108px;
+  min-height: 384px;
+  box-sizing: border-box;
 }
 
 .advantages-item h3 {
@@ -618,10 +620,12 @@ img {
   max-width: 200px;
   display: flex;
   flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: 15px;
 }
 
 .social-item {
-  margin-right: 10px;
+  margin-right: 3px;
 }
 
 .social-item:last-child {
@@ -687,7 +691,7 @@ img {
 .academy {
   padding: 18px 22px;
   outline: 0;
-  box-sizing: border-box;
+  margin-right: -22px;
 }
 
 .academy:hover .academy-logo {
@@ -745,6 +749,7 @@ img {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 45px;
+  margin-left: -7px;
 }
 
 .breadcrumbs-item a {
@@ -772,7 +777,7 @@ img {
 }
 
 .breadcrumbs-item a:focus {
-  box-shadow: 0 0 0 3px #83b3d3;
+  box-shadow: inset 0 0 0 3px #83b3d3;
   border-radius: 4px;
 }
 
@@ -786,14 +791,14 @@ img {
 
 .breadcrumbs-item {
   position: relative;
-  margin-right: 22px;
+  margin-right: 10px;
 }
 
 .breadcrumbs-item::after {
   position: absolute;
   content: "";
   top: 7px;
-  right: -14px;
+  right: -8px;
   width: 5px;
   height: 8px;
   background-image: url("../images/image.svg");
@@ -1060,7 +1065,7 @@ input[type="number"] {
   text-transform: uppercase;
   color: #ffffff;
   background: #83b3d3;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 4px;
   cursor: pointer;
   outline: 0;
@@ -1069,7 +1074,7 @@ input[type="number"] {
 .filters-button:last-child {
   font-family: "PT Sans", sans-serif;
   font-weight: normal;
-  padding: 5px 10px;
+  padding: 5px 14px;
   font-size: 18px;
   line-height: 23px;
   text-align: center;
@@ -1079,6 +1084,7 @@ input[type="number"] {
   cursor: pointer;
   align-self: center;
   outline: 0;
+  margin-bottom: -5px;
 }
 
 .filters-button:first-of-type:hover {
@@ -1203,7 +1209,7 @@ input[type="number"] {
 .select-control {
   font-family: "PT Sans", sans-serif;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 23px;
   color: #333333;
   width: 287px;
@@ -1398,12 +1404,11 @@ input[type="number"] {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  max-width: 115px;
+  max-width: 140px;
 }
 
 .star-item {
   background-image: url("../images/star.svg");
-  background-size: 17px 18px;
   background-repeat: no-repeat;
   width: 18px;
   height: 17px;
@@ -1412,6 +1417,10 @@ input[type="number"] {
 
 .star-item:last-of-type {
   margin-right: 0;
+}
+
+.no-active {
+display: none;
 }
 
 .hotels-container .border {
@@ -1541,7 +1550,7 @@ input[type="number"] {
   background-color: #ffffff;
   color: #000000;
   padding-top: 73px;
-  padding-bottom: 140px;
+  padding-bottom: 142px;
 }
 
 .subscription-catalog h2 {
