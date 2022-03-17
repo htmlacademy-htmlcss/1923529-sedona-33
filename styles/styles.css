@@ -32,11 +32,6 @@ body {
   background-color: #ffffff;
 }
 
-img {
-  max-width: 100%;
-  object-fit: contain;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -201,7 +196,7 @@ img {
   background-color: #000000;
   color: #ffffff;
   background-image: url("../images/index-background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 51px;
 }
@@ -220,7 +215,7 @@ img {
 
 .picture {
   background-image: url("../images/Vector.png");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 57px;
 }
@@ -332,6 +327,7 @@ img {
 .advantages-item img {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .advantages-list li:nth-child(2) {
@@ -489,7 +485,7 @@ img {
   background-color: #000000;
   color: #ffffff;
   background-image: url("../images/background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 94px;
   padding-bottom: 94px;
@@ -726,7 +722,7 @@ img {
   background-color: #000000;
   color: #ffffff;
   background-image: url("../images/catalog-background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-top: 35px;
   padding-bottom: 83px;
@@ -1194,6 +1190,7 @@ input[type="number"] {
   padding: 20px;
   display: grid;
   grid-template-columns: 160px 140px;
+  align-items: start;
 }
 
 .hotels p:only-of-type {
@@ -1307,6 +1304,8 @@ input[type="number"] {
   line-height: 23px;
   color: #333333;
   margin-bottom: 16px;
+  margin-right: 20px;
+  max-width: 100px;
 }
 
 .hotels-item b {
@@ -1319,6 +1318,7 @@ input[type="number"] {
   background-color: #f2f2f2;
   padding: 8px 33px;
   border-radius: 4px;
+  max-width: 100px;
 }
 
 .hotels-item a:nth-of-type(1) {
@@ -1341,6 +1341,7 @@ input[type="number"] {
   background: #756257;
   justify-self: start;
   padding: 8px 23px;
+  max-width: 100px;
 }
 
 .hotels-item .favourites-button {
@@ -1352,6 +1353,7 @@ input[type="number"] {
   color: #ffffff;
   background-color: #83b3d3;
   justify-self: start;
+  max-width: 110px;
   padding: 8px 20px;
 }
 
@@ -1407,7 +1409,7 @@ input[type="number"] {
   max-width: 140px;
 }
 
-.star-item {
+.star-active {
   background-image: url("../images/star.svg");
   background-repeat: no-repeat;
   width: 18px;
@@ -1415,12 +1417,8 @@ input[type="number"] {
   margin-right: 7px;
 }
 
-.star-item:last-of-type {
+.star-active:last-of-type {
   margin-right: 0;
-}
-
-.no-active {
-display: none;
 }
 
 .hotels-container .border {
